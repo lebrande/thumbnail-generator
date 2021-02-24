@@ -1,12 +1,21 @@
 import * as React from 'react';
+import { parse } from 'querystring';
+import { QueryParams, content as defaultContent } from '../../content';
 import authorImg from '../../img/author.jpg';
 import logoImg from '../../img/logo.png';
 
 export const App = () => {
+  let params = window.location.search;
+  const [firstChar, ...chars] = params;
+  params = firstChar === '?' ? chars as unknown as string : params;
+
+  const content = parse(params) as QueryParams;
+  console.log({ content })
+
   const [showForm, setShowForm] = React.useState(false);
-  const [title, setTitle] = React.useState('YouTube Cover Generator');
-  const [subtitle, setSubtitle] = React.useState('Focus on video production');
-  const [authorName, setAuthorName] = React.useState('Jakub Pusiak');
+  const [title, setTitle] = React.useState(content.title || defaultContent.title);
+  const [subtitle, setSubtitle] = React.useState(content.subtitle || defaultContent.subtitle);
+  const [authorName, setAuthorName] = React.useState(content.authorName || defaultContent.authorName);
 
   return (
     <div className="relative">
