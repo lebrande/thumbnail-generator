@@ -45,7 +45,7 @@ export const App = () => {
               <h1 className="text-7xl">{title || '<type title>'}</h1>
               <h2 className="text-4xl">{subtitle || '<type subtitle>'}</h2>
             </div>
-            <img src={logoImg} className="rounded w-24 h-24" />
+            <img src={logoImg} className="rounded w-24 h-24 ring-4 ring-gray-900 ring-opacity-20" />
           </div>
           <div className="flex items-center space-x-8">
             <img src={authorImg} className="rounded-full w-32 h-32" />
