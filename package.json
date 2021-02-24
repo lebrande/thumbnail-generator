@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "generator": "parcel generator/index.html",
-    "client": "ts-node client/index.ts"
+    "creator": "parcel generator/index.html",
+    "generator": "ts-node client/index.ts"
   },
   "keywords": [],
   "author": "",
